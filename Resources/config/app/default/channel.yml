@@ -1,0 +1,18 @@
+sylius_fixtures:
+    suites:
+        default:
+            fixtures:
+                channel:
+                    priority: -1
+                    options:
+                        custom:
+                            -
+                                code: web-01
+                                name: Default
+                                hostname: 127.0.0.1
+                                enabled: true
+                                color: blue
+                                defaultLocale: "%locale%"
+                                theme_name: toro/default
+                                locales:
+                                    - "%locale%"

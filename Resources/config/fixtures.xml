@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="sylius.fixture.locale" class="Toro\Bundle\FixtureBundle\DataFixture\LocaleFixture">
+            <argument type="service" id="sylius.factory.locale" />
+            <argument type="service" id="sylius.manager.locale" />
+            <argument>%locale%</argument>
+            <tag name="sylius_fixtures.fixture" />
+        </service>
+
+        <service id="sylius.fixture.geographical" class="Toro\Bundle\FixtureBundle\DataFixture\GeographicalFixture">
+            <argument type="service" id="sylius.factory.country" />
+            <argument type="service" id="sylius.manager.country" />
+            <argument type="service" id="sylius.factory.province" />
+            <argument type="service" id="sylius.manager.province" />
+            <argument type="service" id="sylius.factory.zone" />
+            <argument type="service" id="sylius.manager.zone" />
+            <tag name="sylius_fixtures.fixture" />
+        </service>
+
+        <service id="sylius.fixture.channel" class="Toro\Bundle\FixtureBundle\DataFixture\ChannelFixture">
+            <argument type="service" id="sylius.manager.channel" />
+            <argument type="service" id="sylius.fixture.example_factory.channel" />
+            <tag name="sylius_fixtures.fixture" />
+        </service>
+
+        <service id="sylius.fixture.user" class="Toro\Bundle\FixtureBundle\DataFixture\AdminUserFixture">
+            <argument type="service" id="sylius.manager.admin_user" />
+            <argument type="service" id="sylius.fixture.example_factory.user" />
+            <tag name="sylius_fixtures.fixture" />
+        </service>
+
+        <service id="sylius.fixture.taxon" class="Toro\Bundle\FixtureBundle\DataFixture\TaxonFixture">
+            <argument type="service" id="sylius.manager.taxon" />
+            <argument type="service" id="sylius.fixture.example_factory.taxon" />
+            <tag name="sylius_fixtures.fixture" />
+        </service>
+    </services>
+</container>

@@ -1,0 +1,7 @@
+sylius_fixtures:
+    suites:
+        default:
+            listeners:
+                orm_purger: ~
+                logger: ~
+                temp_directory_purger: ~

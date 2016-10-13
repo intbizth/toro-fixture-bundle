@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="toro.fixture.example_factory.locale_ware"
+                 class="Toro\Bundle\FixtureBundle\DataFixture\Factory\AbstractLocaleAwareFactory" abstract="true">
+            <call method="setLocaleRepository">
+                <argument type="service" id="sylius.repository.locale"/>
+            </call>
+            <call method="setDefaultLocale">
+                <argument type="string">%locale%</argument>
+            </call>
+        </service>
+
+        <service id="sylius.fixture.example_factory.user" class="Toro\Bundle\FixtureBundle\DataFixture\Factory\AdminUserExampleFactory">
+            <argument type="service" id="sylius.factory.admin_user"/>
+        </service>
+
+        <service id="sylius.fixture.example_factory.channel"
+                 class="Toro\Bundle\FixtureBundle\DataFixture\Factory\ChannelExampleFactory">
+            <argument type="service" id="sylius.factory.channel"/>
+            <argument type="service" id="sylius.repository.taxon"/>
+            <argument type="service" id="sylius.repository.locale"/>
+        </service>
+
+        <service id="sylius.fixture.example_factory.taxon" parent="toro.fixture.example_factory.locale_ware" class="Toro\Bundle\FixtureBundle\DataFixture\Factory\TaxonExampleFactory">
+            <argument type="service" id="sylius.factory.taxon"/>
+            <argument type="service" id="sylius.repository.taxon"/>
+        </service>
+    </services>
+</container>

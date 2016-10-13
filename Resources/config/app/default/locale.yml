@@ -1,0 +1,9 @@
+sylius_fixtures:
+    suites:
+        default:
+            fixtures:
+                locale:
+                    priority: 0
+                    options:
+                        locales:
+                            "%locale%": true

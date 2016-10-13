@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+                               http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <imports>
+        <import resource="fixtures.xml"/>
+        <import resource="fixtures_factories.xml"/>
+    </imports>
+
+    <services>
+        <service id="toro.fixture.listener.temp_directory_purger"
+                 class="Toro\Bundle\FixtureBundle\Purger\TempDirectoryPurgerListener">
+            <tag name="sylius_fixtures.listener"/>
+        </service>
+
+        <service id="toro.fixture_factory.image_upload_handler"
+                 class="Toro\Bundle\FixtureBundle\DataFixture\Uploader\ImageUploadHelper">
+            <argument id="kernel" type="service"/>
+            <argument id="doctrine_phpcr.odm.document_manager" type="service"/>
+            <argument id="cmf_media.upload_image_helper" type="service"/>
+            <argument>%cmf_media.persistence.phpcr.image.class%</argument>
+        </service>
+    </services>
+</container>

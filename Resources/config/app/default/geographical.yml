@@ -1,0 +1,57 @@
+sylius_fixtures:
+    suites:
+        default:
+            fixtures:
+                geographical:
+                    priority: 0
+                    options:
+                        provinces:
+                            TH:
+                                TH-BKK:
+                                    th_TH: กรุงเทพฯ
+                                    en_US: Bangkok
+                                TH-BRR:
+                                    th_TH: บุรีรัมย์
+                                    en_US: Buriram
+                                TH-CHN:
+                                    th_TH: ชัยนาท
+                                    en_US: Chainat
+                                TH-CHR:
+                                    th_TH: เชียงราย
+                                    en_US: Chiangrai
+                                TH-CBR:
+                                    th_TH: ชลบุรี
+                                    en_US: Chonburi
+                                TH-KRT:
+                                    th_TH: โคราช
+                                    en_US: Nakhon Ratchasima
+                                TH-NBR:
+                                    th_TH: นนท์บุรี
+                                    en_US: Nonthaburi
+                                TH-PTT:
+                                    th_TH: ปทุมธานี
+                                    en_US: Pathumthani
+                                TH-RBR:
+                                    th_TH: ราชบุรี
+                                    en_US: Ratchaburi
+                                TH-SPK:
+                                    th_TH: สมุทรปราการ
+                                    en_US: Samut Prakan
+                                TH-SSK:
+                                    th_TH: ศรีษเกษ
+                                    en_US: Sisaket
+                                TH-SKT:
+                                    th_TH: สุโขทัย
+                                    en_US: Sukhothai
+                                TH-SBR:
+                                    th_TH: สุพรรณ์บุรี
+                                    en_US: Suphanburi
+                        zones:
+                            TH-ALL:
+                                name: "Thailand"
+                                countries:
+                                    - TH
+                            TH-CENTRAL:
+                                name: "Thailand Central"
+                                provinces:
+                                    - TH-BKK
