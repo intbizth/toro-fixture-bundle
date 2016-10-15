@@ -3,4 +3,3 @@ imports:
     - { resource: locale.yml }
     - { resource: geographical.yml }
     - { resource: channel.yml }
-    - { resource: admin_user.yml }

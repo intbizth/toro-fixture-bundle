@@ -13,10 +13,6 @@
             </call>
         </service>
 
-        <service id="sylius.fixture.example_factory.user" class="Toro\Bundle\FixtureBundle\DataFixture\Factory\AdminUserExampleFactory">
-            <argument type="service" id="sylius.factory.admin_user"/>
-        </service>
-
         <service id="sylius.fixture.example_factory.channel"
                  class="Toro\Bundle\FixtureBundle\DataFixture\Factory\ChannelExampleFactory">
             <argument type="service" id="sylius.factory.channel"/>

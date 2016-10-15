@@ -65,9 +65,9 @@ abstract class AbstractLocaleAwareFactory implements ExampleFactoryInterface
                 $value = $data[$property];
                 $value = is_string($value)
                     ? $value
-                    : isset($value[$localeCode])
+                    : (isset($value[$localeCode])
                         ? $value[$localeCode]
-                        : $value[$this->defaultLocale]
+                        : $value[$this->defaultLocale])
                 ;
 
                 $accessor->setValue($object, $property, $value);
