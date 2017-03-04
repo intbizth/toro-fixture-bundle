@@ -9,16 +9,6 @@
             <tag name="sylius_fixtures.fixture" />
         </service>
 
-        <service id="sylius.fixture.geographical" class="Toro\Bundle\FixtureBundle\DataFixture\GeographicalFixture">
-            <argument type="service" id="sylius.factory.country" />
-            <argument type="service" id="sylius.manager.country" />
-            <argument type="service" id="sylius.factory.province" />
-            <argument type="service" id="sylius.manager.province" />
-            <argument type="service" id="sylius.factory.zone" />
-            <argument type="service" id="sylius.manager.zone" />
-            <tag name="sylius_fixtures.fixture" />
-        </service>
-
         <service id="sylius.fixture.channel" class="Toro\Bundle\FixtureBundle\DataFixture\ChannelFixture">
             <argument type="service" id="sylius.manager.channel" />
             <argument type="service" id="sylius.fixture.example_factory.channel" />
