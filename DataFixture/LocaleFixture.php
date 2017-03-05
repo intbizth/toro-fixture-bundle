@@ -54,9 +54,13 @@ class LocaleFixture extends AbstractFixture
      */
     public function load(array $options)
     {
-        $localesCodes = array_merge([$this->baseLocaleCode], $options['locales']);
+        $localesCodes = array_merge([$this->baseLocaleCode => true], $options['locales']);
 
-        foreach ($localesCodes as $localeCode) {
+        foreach ($localesCodes as $localeCode => $enabled) {
+            if (!$enabled) {
+                continue;
+            }
+
             /** @var LocaleInterface $locale */
             $locale = $this->localeFactory->createNew();
 
