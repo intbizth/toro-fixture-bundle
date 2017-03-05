@@ -48,6 +48,9 @@ final class TaxonExampleFactory extends AbstractLocaleAwareFactory
                 ->setDefault('name', function (Options $options) {
                     return $this->faker->words(3, true);
                 })
+                ->setDefault('slug', function (Options $options) {
+                    return $options['name'];
+                })
                 ->setDefault('code', function (Options $options) {
                     return StringInflector::nameToCode($options['name']);
                 })
@@ -75,7 +78,7 @@ final class TaxonExampleFactory extends AbstractLocaleAwareFactory
 
         $taxon->setCode($options['code']);
 
-        $this->setLocalizedData($taxon, ['name', 'description'], $options);
+        $this->setLocalizedData($taxon, ['name', 'slug', 'description'], $options);
 
         foreach ($options['children'] as $key => $childOptions) {
             $taxon->addChild($this->create($key, $childOptions));
