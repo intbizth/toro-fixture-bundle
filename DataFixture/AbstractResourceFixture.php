@@ -27,17 +27,17 @@ abstract class AbstractResourceFixture implements FixtureInterface
     /**
      * @var ObjectManager
      */
-    private $objectManager;
+    protected $objectManager;
 
     /**
      * @var ExampleFactoryInterface
      */
-    private $exampleFactory;
+    protected $exampleFactory;
 
     /**
      * @var OptionsResolver
      */
-    private $optionsResolver;
+    protected $optionsResolver;
 
     /**
      * @param ObjectManager $objectManager
