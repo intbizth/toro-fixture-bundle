@@ -12,7 +12,7 @@ final class TempDirectoryPurgerListener extends AbstractListener implements Afte
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'temp_directory_purger';
     }
@@ -20,7 +20,7 @@ final class TempDirectoryPurgerListener extends AbstractListener implements Afte
     /**
      * {@inheritdoc}
      */
-    public function afterSuite(SuiteEvent $suiteEvent, array $options)
+    public function afterSuite(SuiteEvent $suiteEvent, array $options): void
     {
         $dir = '/tmp/toro-fixtures';
 
