@@ -52,7 +52,7 @@ class LocaleFixture extends AbstractFixture
     /**
      * {@inheritdoc}
      */
-    public function load(array $options)
+    public function load(array $options): void
     {
         $localesCodes = array_merge([$this->baseLocaleCode => true], $options['locales']);
 
@@ -75,7 +75,7 @@ class LocaleFixture extends AbstractFixture
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'locale';
     }
