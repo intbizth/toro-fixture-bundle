@@ -42,6 +42,7 @@ final class ChannelFixture extends AbstractResourceFixture
                 ->booleanNode('enabled')->end()
                 ->arrayNode('locales')->prototype('scalar')->end()->end()
                 ->arrayNode('taxons')->prototype('scalar')->end()->end()
+                ->arrayNode('settings')->prototype('variable')->end()->end()
         ;
     }
 }
