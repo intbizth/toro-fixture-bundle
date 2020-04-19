@@ -72,6 +72,9 @@ final class ChannelExampleFactory implements ExampleFactoryInterface
                 ->setDefault('taxons', LazyOption::all($taxonRepository))
                 ->setAllowedTypes('taxons', 'array')
                 ->setNormalizer('taxons', LazyOption::findBy($taxonRepository, 'code'))
+            
+                ->setDefault('settings', [])
+                ->setAllowedTypes('settings', 'array')
         ;
     }
 
@@ -90,6 +93,7 @@ final class ChannelExampleFactory implements ExampleFactoryInterface
         $channel->setEnabled($options['enabled']);
         $channel->setColor($options['color']);
         $channel->setDefaultLocale($options['defaultLocale']);
+        $channel->setSettings($options['settings']);
 
         foreach ($options['locales'] as $locale) {
             $channel->addLocale($locale);
